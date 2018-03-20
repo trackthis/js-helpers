@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "gh:finwo/js-helpers"
+    "url": "https://github.com/trackthis/js-helpers"
   },
   "optionalDependencies": {
     "extend": "^3.0.1"
