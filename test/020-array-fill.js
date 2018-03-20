@@ -1,6 +1,5 @@
 var path   = require('path'),
-    assert = require('assert'),
-    fs     = require('fs-extra');
+    assert = require('assert');
 
 // Force setting the polyfill
 process.env.TEST = 'Array.prototype.fill';
@@ -13,7 +12,6 @@ var Test  = Mocha.Test;
 var Suite = Mocha.Suite;
 var mocha = global.mocha || new Mocha();
 var suite = Suite.create(mocha.suite,'Verifying Array.prototype.fill');
-var ref   = {};
 
 // Tests copied from the MDN examples
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill
