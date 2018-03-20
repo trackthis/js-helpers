@@ -1,0 +1,15 @@
+{
+  "name": "trackthis-helpers",
+  "version": "0.0.1",
+  "description": "Common helpers and extends for trackthis",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "gh:finwo/js-helpers"
+  },
+  "author": "Robin Bron <robin@finwo.nl>",
+  "license": "MIT"
+}
