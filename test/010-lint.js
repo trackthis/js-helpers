@@ -4,9 +4,7 @@ var path   = require('path'),
 
 // Defining globals
 global.approot = path.dirname(__dirname);
-global.co      = require('co');
 global.Promise = require('bluebird');
-global.config  = false;
 
 // Load scandir helper
 require('../lib/fs_scandir');
@@ -15,6 +13,7 @@ require('../lib/fs_scandir');
 var JSHINT = require('jshint').JSHINT,
     files  = [];
 
+var co    = require('co');
 var Mocha = global.Mocha || require('mocha');
 var Test  = Mocha.Test;
 var Suite = Mocha.Suite;
