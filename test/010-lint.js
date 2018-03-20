@@ -3,6 +3,7 @@ var path   = require('path'),
     fs     = require('fs-extra');
 
 // Defining globals
+/** global: approot */
 global.approot = path.dirname(__dirname);
 global.Promise = require('bluebird');
 
