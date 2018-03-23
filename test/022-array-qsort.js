@@ -41,6 +41,10 @@ suite.addTest(new Test('Number array with duplicate values & custom cmp function
   })), '[1,2,2,3]');
 }));
 
+suite.addTest(new Test('String array with duplicate values', function () {
+  assert.equal(JSON.stringify([ 'foo', 'bar', 'hello', 'hello' ].qsort()), '["bar","foo","hello","hello"]');
+}));
+
 suite.addTest(new Test('Object array with duplicate values & custom cmp function', function () {
   assert.equal(JSON.stringify([ {v:3}, {v:2}, {v:2}, {v:1} ].qsort(function(a, b) {
     return a.v - b.v;
