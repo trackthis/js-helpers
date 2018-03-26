@@ -1,6 +1,6 @@
 {
   "name": "trackthis-helpers",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "Common helpers and extends for trackthis",
   "main": "index.js",
   "scripts": {
