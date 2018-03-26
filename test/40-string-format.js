@@ -4,8 +4,8 @@ var path   = require('path'),
 // Force setting the polyfill
 process.env.TEST = 'Array.prototype.intersect';
 
-// Include the array set helper
-var set = require(path.join('..', 'lib', 'string_format'));
+// Include the string format helper
+require(path.join('..', 'lib', 'string_format'));
 
 var Mocha = global.Mocha || require('mocha');
 var Test  = Mocha.Test;

@@ -4,7 +4,7 @@ var path   = require('path'),
 // Force setting the polyfill
 process.env.TEST = 'Array.prototype.intersect';
 
-// Include the array set helper
+// Include the set_deep helper
 var set = require(path.join('..', 'lib', 'set_deep'));
 
 var Mocha = global.Mocha || require('mocha');
