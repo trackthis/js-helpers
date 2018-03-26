@@ -36,5 +36,22 @@ suite.addTest(new Test('Replacing multiple tags', function () {
   assert.equal('{greeting} {subject}!'.format({greeting:'Hello',subject:'world'}),'Hello world!');
 }));
 
+suite.addTest(new Test('Replacing numbered tags', function () {
+  assert.equal('{0} {1}!'.format('Hello', 'world'),'Hello world!');
+}));
+
+suite.addTest(new Test('Null values', function () {
+  assert.equal('SELECT username FROM user WHERE id = {id};'.format({ id: null }),'SELECT username FROM user WHERE id = NULL;');
+}));
+
+suite.addTest(new Test('Boolean values', function () {
+  assert.equal('var isAdmin = {user.permissions.admin};'.format({user:{permissions:{admin:false}}}),'var isAdmin = false;');
+  assert.equal('var isAdmin = {user.permissions.admin};'.format({user:{permissions:{admin:true}}}),'var isAdmin = true;');
+}));
+
+suite.addTest(new Test('Non-existing numbered tags', function () {
+  assert.equal('{0} {1}{2}'.format('Hello', 'world'),'Hello world');
+}));
+
 // Let's start testing
 mocha.run();
