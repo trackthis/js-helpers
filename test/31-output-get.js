@@ -4,38 +4,22 @@ var path   = require('path'),
 // Force setting the polyfill
 process.env.TEST = 'Array.prototype.intersect';
 
-// Include the flatten helper
-var flatten = require(path.join('..', 'lib', 'flatten'));
+// Include the get_deep helper
+var get = require(path.join('..', 'lib', 'get_deep'));
 
 var Mocha = global.Mocha || require('mocha');
 var Test  = Mocha.Test;
 var Suite = Mocha.Suite;
 var mocha = global.mocha || new Mocha();
-var suite = Suite.create(mocha.suite, 'Verifying module.exports.flatten');
+var suite = Suite.create(mocha.suite, 'Verifying module.exports.set');
+var ref   = {};
 
 suite.timeout(5000);
 
-suite.addTest(new Test('Start with an empty object', function () {
-  assert.equal(JSON.stringify(flatten({})), '{}');
-}));
-
-suite.addTest(new Test('Verify an already-flat object', function () {
-  assert.equal(JSON.stringify(flatten({foo:'bar',hello:'world'})), '{"foo":"bar","hello":"world"}');
-}));
-
-suite.addTest(new Test('Flatten a deep object', function () {
-  assert.equal(JSON.stringify(flatten({header:{from:"some1@example.com"}})), '{"header.from":"some1@example.com"}');
-}));
-
-suite.addTest(new Test('Flatten a deep object, including json of objects', function () {
-  assert.equal(JSON.stringify(flatten({header:{from:"some1@example.com"}}, true)), '{"header":"{\\"from\\":\\"some1@example.com\\"}","header.from":"some1@example.com"}');
-}));
-
-suite.addTest(new Test('Flatten a deep object containing a function', function () {
-  assert.equal(JSON.stringify(flatten({header: console.log})), '{}');
-  assert.equal(typeof flatten({header: { log: console.log }})['header.log'], 'function');
-}));
-
+// suite.addTest(new Test('Start with an empty object', function () {
+//   assert.equal(typeof get({}),'{}');
+// }));
+//
 // suite.addTest(new Test('Setting a first-level string by string key', function () {
 //   set(ref,"hello","WORLD");
 //   assert.equal(JSON.stringify(ref),'{"hello":"WORLD"}');
