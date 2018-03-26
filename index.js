@@ -6,5 +6,7 @@ require('./lib/fs_scandir');
 require('./lib/string_format');
 
 module.exports = {
-  set: require('./lib/set_deep')
+  flatten : require('./lib/flatten'),
+  get     : require('./lib/get_deep'),
+  set     : require('./lib/set_deep')
 };
