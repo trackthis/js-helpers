@@ -70,6 +70,7 @@ suite.addTest(new Test('Overwrite a deep string by string key', function () {
   assert.equal(JSON.stringify(ref),'{"hello":"world","foo":"bar","mail":{"body":"Hi there","header":{"from":"Spammer"}}}');
 }));
 
+// TODO: re-add these test
 // suite.addTest(new Test('Setting a first-level object by string key', function () {
 //   set(ref,"mail",{ from: "test@example.com" });
 //   assert.equal(JSON.stringify(ref),'{"hello":"world","foo":"bar","mail":{"from":"test@example.com"}}');
