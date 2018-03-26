@@ -70,37 +70,5 @@ suite.addTest(new Test('Overwrite a deep string by string key', function () {
   assert.equal(JSON.stringify(ref),'{"hello":"world","foo":"bar","mail":{"body":"Hi there","header":{"from":"Spammer"}}}');
 }));
 
-// TODO: re-add these test
-// suite.addTest(new Test('Setting a first-level object by string key', function () {
-//   set(ref,"mail",{ from: "test@example.com" });
-//   assert.equal(JSON.stringify(ref),'{"hello":"world","foo":"bar","mail":{"from":"test@example.com"}}');
-// }));
-//
-// suite.addTest(new Test('Setting a deep string by string key', function () {
-//   set(ref,"mail.gpg.signature","0xDEADBEEF");
-//   assert.equal(JSON.stringify(ref),'{"hello":"world","foo":"bar","mail":{"from":"test@example.com","gpg":{"signature":"0xDEADBEEF"}}}');
-// }));
-//
-// suite.addTest(new Test('Setting a deep object by string key without require(\'extend\')', function () {
-//   set(ref,"mail.gpg.signature","0xDEADBEEF");
-//   assert.equal(JSON.stringify(ref),'{"hello":"world","foo":"bar","mail":{"from":"test@example.com","gpg":{"signature":"0xDEADBEEF"}}}');
-// }));
-
-
-// suite.addTest(new Test('Setting a first-level property by array key', function () {
-//   set(ref,["foo"],"bar");
-//   assert.equal(JSON.stringify(ref),'{"hello":"world","foo":"bar"}');
-// }));
-
-// suite.addTest(new Test('Setting a nested property by string key', function () {
-//   set(ref,"foo.bar","QWERTY");
-//   assert.equal(JSON.stringify(ref),'{"hello":"world","foo":{"bar":"QWERTY"}}');
-// }));
-//
-// suite.addTest(new Test('Overwriting a nested property by array key', function () {
-//   set(ref,["foo","bar"],"qwerty");
-//   assert.equal(JSON.stringify(ref),'{"hello":"world","foo":{"bar":"qwerty"}}');
-// }));
-
 // Let's start testing
 mocha.run();
