@@ -12,7 +12,6 @@ var Test  = Mocha.Test;
 var Suite = Mocha.Suite;
 var mocha = global.mocha || new Mocha();
 var suite = Suite.create(mocha.suite, 'Verifying String.prototype.format');
-var ref   = {};
 
 suite.timeout(5000);
 
