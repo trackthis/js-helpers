@@ -5,7 +5,7 @@ var path   = require('path'),
 process.env.TEST = 'Array.prototype.intersect';
 
 // Include the flatten helper
-var flatten = require(path.join('..', 'lib', 'flatten'));
+var flatten = require(path.join('..', 'index')).flatten;
 
 var Mocha = global.Mocha || require('mocha');
 var Test  = Mocha.Test;
