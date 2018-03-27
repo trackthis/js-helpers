@@ -2,10 +2,10 @@ var path   = require('path'),
     assert = require('assert');
 
 // Force setting the polyfill
-process.env.TEST = 'Array.prototype.intersect';
+process.env.TEST = 'module.exports.set';
 
 // Include the set_deep helper
-var set = require(path.join('..', 'index')).set;
+var set = require('../lib/set_deep');
 
 var Mocha = global.Mocha || require('mocha');
 var Test  = Mocha.Test;
