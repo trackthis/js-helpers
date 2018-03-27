@@ -3,6 +3,7 @@ require('./lib/array_intersect');
 require('./lib/array_qsort');
 require('./lib/array_unique');
 require('./lib/fs_scandir');
+require('./lib/object_watch');
 require('./lib/string_format');
 require('./lib/string_pipe');
 
