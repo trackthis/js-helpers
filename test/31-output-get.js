@@ -5,7 +5,7 @@ var path   = require('path'),
 process.env.TEST = 'Array.prototype.intersect';
 
 // Include the get_deep helper
-var get = require(path.join('..', 'lib', 'get_deep'));
+var get = require(path.join('..', 'index')).get;
 
 var Mocha = global.Mocha || require('mocha');
 var Test  = Mocha.Test;

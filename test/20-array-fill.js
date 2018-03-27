@@ -4,8 +4,8 @@ var path   = require('path'),
 // Force setting the polyfill
 process.env.TEST = 'Array.prototype.fill';
 
-// Include the array fill helper
-require(path.join('..','lib','array_fill'));
+// Include all helpers (to ensure code coverage number is reliable)
+require(path.join('..','index'));
 
 var Mocha = global.Mocha || require('mocha');
 var Test  = Mocha.Test;
