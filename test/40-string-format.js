@@ -2,10 +2,10 @@ var path   = require('path'),
     assert = require('assert');
 
 // Force setting the polyfill
-process.env.TEST = 'Array.prototype.intersect';
+process.env.TEST = 'String.prototype.format';
 
-// Include all helpers (to ensure code coverage number is reliable)
-require(path.join('..', 'index'));
+// Include Array.prototype.fill
+require('../lib/string_format');
 
 var Mocha = global.Mocha || require('mocha');
 var Test  = Mocha.Test;

@@ -2,10 +2,10 @@ var path   = require('path'),
     assert = require('assert');
 
 // Force setting the polyfill
-process.env.TEST = 'Array.prototype.intersect';
+process.env.TEST = 'module.exports.flatten';
 
 // Include the flatten helper
-var flatten = require(path.join('..', 'index')).flatten;
+var flatten = require('../lib/flatten');
 
 var Mocha = global.Mocha || require('mocha');
 var Test  = Mocha.Test;
