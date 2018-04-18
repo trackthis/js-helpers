@@ -1,6 +1,8 @@
 Trackthis helpers
 =================
 
+[![Codetree](https://codetree.com/images/managed-with-codetree.svg)](https://codetree.com/projects/gX1r)
+
 [![npm](https://img.shields.io/npm/v/trackthis-helpers.svg?style=flat-square)](https://npmjs.com/package/trackthis-helpers/)
 [![Scrutinizer Build](https://img.shields.io/scrutinizer/build/g/trackthis/js-helpers.svg?style=flat-square)](https://scrutinizer-ci.com/g/trackthis/js-helpers/)
 [![Scrutinizer](https://img.shields.io/scrutinizer/g/trackthis/js-helpers.svg?style=flat-square)](https://scrutinizer-ci.com/g/trackthis/js-helpers/)
