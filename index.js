@@ -1,5 +1,5 @@
 module.exports = function (opts) {
-  opts = opts || {};
+  opts = ( 'object' === typeof opts ) ? ( opts || {} ) : {};
 
   require('./lib/array_fill');
   require('./lib/array_intersect');
@@ -11,13 +11,13 @@ module.exports = function (opts) {
   require('./lib/string_hashcode');
 
   // skip prototype pollution of methods used by browserify
-  if (typeof opts.build == 'undefined' || opts.build == false) {
+  if (!ops.build) {
     require('./lib/string_pipe');
   }
-  
+
   return {
-    flatten: require('./lib/flatten'),
-    get: require('./lib/get_deep'),
-    set: require('./lib/set_deep')
+    flatten   : require('./lib/flatten'),
+    get       : require('./lib/get_deep'),
+    set       : require('./lib/set_deep')
   };
 };
