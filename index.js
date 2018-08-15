@@ -11,7 +11,7 @@ module.exports = function (opts) {
   require('./lib/string_hashcode');
 
   // skip prototype pollution of methods used by browserify
-  if (!ops.build) {
+  if (!opts.build) {
     require('./lib/string_pipe');
   }
 
