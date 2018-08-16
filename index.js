@@ -6,7 +6,7 @@ module.exports = function (opts) {
   require('./lib/array_qsort');
   require('./lib/array_unique');
   require('./lib/fs_scandir');
-  require('./lib/object_watch');
+
   require('./lib/string_format');
   require('./lib/string_hashcode');
 
@@ -14,10 +14,15 @@ module.exports = function (opts) {
   if (!opts.build) {
     require('./lib/string_pipe');
   }
+  if (!opts.test) {
+    require('./lib/object_watch');
+  }
 
   return {
-    flatten   : require('./lib/flatten'),
-    get       : require('./lib/get_deep'),
-    set       : require('./lib/set_deep')
-  };
+      flatten   : require('./lib/flatten'),
+      get       : require('./lib/get_deep'),
+      set       : require('./lib/set_deep')
+    };
 };
+
+module.exports.fs = require('./lib/fs_scandir');
