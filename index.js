@@ -25,6 +25,9 @@ module.exports = function (opts) {
       if (opts.omit && opts.omit.includes(key)) {
         delete toLoad[key];
       } else {
+        if(opts.conf && 'object' === typeof opts.conf && opts.conf.key == key) {
+          toLoad[key] = require('./lib/' + toLoad[key])(opts.conf);
+        }
         toLoad[key] = require('./lib/' + toLoad[key]);
       }
     }
