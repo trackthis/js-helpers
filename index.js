@@ -1,28 +1,31 @@
 module.exports = function (opts) {
   opts = ( 'object' === typeof opts ) ? ( opts || {} ) : {};
 
-  require('./lib/array_fill');
-  require('./lib/array_intersect');
-  require('./lib/array_qsort');
-  require('./lib/array_unique');
-  require('./lib/fs_scandir');
+  var helpers = {
+    libs: [
+      'array_fill',
+      'array_intersect',
+      'array_qsort',
+      'array_unique',
+      'fs_scandir',
+      'string_format',
+      'string_hashcode',
+      'string_pipe',
+      'object_flatten',
+      'object_watch',
+      'get_deep',
+      'set_deep'
+    ]
+  };
 
-  require('./lib/string_format');
-  require('./lib/string_hashcode');
+  helpers.load = function(opts) {
+    var toLoad = this.libs;
+    if(opts.omit && opts.omit.length > 0) {
+      toLoad = this.libs.filter((lib) => !opts.omit.includes(lib));
+    }
+    return toLoad.map(lib => require('./lib/'+lib)) ;
+  };
 
-  // skip prototype pollution of methods used by browserify
-  if (!opts.build) {
-    require('./lib/string_pipe');
-  }
-  if (!opts.test) {
-    require('./lib/object_watch');
-  }
-
-  return {
-      flatten   : require('./lib/flatten'),
-      get       : require('./lib/get_deep'),
-      set       : require('./lib/set_deep')
-    };
+  return helpers.load(opts);
 };
 
-module.exports.fs = require('./lib/fs_scandir');
