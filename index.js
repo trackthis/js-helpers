@@ -1,38 +1,28 @@
 module.exports = function (opts) {
   opts = ( 'object' === typeof opts ) ? ( opts || {} ) : {};
 
+  require('./lib/array_fill');
+  require('./lib/array_intersect');
+  require('./lib/array_qsort');
+  require('./lib/array_unique');
+  require('./lib/fs_scandir');
 
-  var helpers = {
-    libs: {
-      array_fill: 'array_fill',
-      intersect: 'array_intersect',
-      qsort: 'array_qsort',
-      unique: 'array_unique',
-      format: 'string_format',
-      fs: 'fs',
-      hashCode: 'string_hashcode',
-      pipe: 'string_pipe',
-      flatten: 'object_flatten',
-      watch: 'object_watch',
-      get: 'get_deep',
-      set: 'set_deep'
-    }
-  };
+  require('./lib/string_format');
+  require('./lib/string_hashcode');
 
-  helpers.load = function(opts) {
-    var toLoad = this.libs;
-    for (var key in toLoad) {
-      if (opts.omit && opts.omit.includes(key)) {
-        delete toLoad[key];
-      } else {
-        if(opts.conf && 'object' === typeof opts.conf && opts.conf.key == key) {
-          toLoad[key] = require('./lib/' + toLoad[key])(opts.conf);
-        }
-        toLoad[key] = require('./lib/' + toLoad[key]);
-      }
-    }
-    return toLoad;
-  };
+  // skip prototype pollution of methods used by browserify
+  if (!opts.build) {
+    require('./lib/string_pipe');
+  }
+  if (!opts.test) {
+    require('./lib/object_watch');
+  }
 
-  return helpers.load(opts);
+  return {
+      flatten   : require('./lib/flatten'),
+      get       : require('./lib/get_deep'),
+      set       : require('./lib/set_deep')
+    };
 };
+
+module.exports.fs = require('./lib/fs_scandir');

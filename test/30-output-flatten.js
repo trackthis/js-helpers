@@ -5,7 +5,7 @@ var path   = require('path'),
 process.env.TEST = 'module.exports.flatten';
 
 // Include the flatten helper
-var flatten = require('../lib/object_flatten');
+var flatten = require('../lib/flatten');
 
 var Mocha = global.Mocha || require('mocha');
 var Test  = Mocha.Test;
