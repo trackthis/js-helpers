@@ -7,8 +7,8 @@ var path   = require('path'),
 global.approot = path.dirname(__dirname);
 global.Promise = require('bluebird');
 
-// Load scandir helper
-require('../lib/fs_scandir');
+// Load fs helpers
+require('../lib/fs');
 
 // Other libraries
 var JSHINT = require('jshint').JSHINT,
