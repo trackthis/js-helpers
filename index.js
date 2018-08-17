@@ -1,6 +1,9 @@
 module.exports = function (opts) {
   opts = ( 'object' === typeof opts ) ? ( opts || {} ) : {};
 
+  // load
+  var fs = ('fs-extra');
+
   var helpers = {
     libs: [
       'array_fill',
