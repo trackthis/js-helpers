@@ -1,0 +1,16 @@
+[ver:1,total:2040]
+index.js:691,1534845600:382,1534852800:309,m
+.gtm/terminal.app:642,1534428000:240,1534845600:102,1534852800:300,r
+package.json:188,1534845600:182,1534852800:6,m
+lib/fs_scandir.js:142,1534845600:64,1534852800:78,m
+lib/object_watch.js:116,1534845600:110,1534852800:6,m
+../js-api-client/node_modules/trackthis-helpers/lib/fs_scandir.js:70,1534845600:70,r
+../js-api-client/node_modules/trackthis-helpers/index.js:70,1534845600:70,r
+lib/object_flatten.js:30,1534852800:30,r
+lib/string_format.js:20,1534845600:20,r
+lib/array_fill.js:20,1534845600:20,r
+lib/flatten.js:15,1534852800:15,d
+lib/get_deep.js:12,1534852800:12,r
+lib/string_pipe.js:12,1534852800:12,r
+lib/set_deep.js:6,1534852800:6,r
+lib/fs.js:6,1534852800:6,d
