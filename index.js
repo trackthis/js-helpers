@@ -1,7 +1,7 @@
 module.exports = function( options ) {
   options = ( 'object' === typeof options ) ? ( options || {} ) : {};
 
-  options.fs             = options.fs             || (require.resolve('fs-extra')?require('fs-extra'):false);
+  options.fs             = ('object'===typeof window) ? false : (options.fs || false);
   options.hygienic       = options.hygienic       || false;
   options.fix            = options.fix            || {};
   options.fix.browserify = options.fix.browserify || false;
