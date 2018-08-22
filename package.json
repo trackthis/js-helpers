@@ -1,6 +1,6 @@
 {
   "name": "trackthis-helpers",
-  "version": "0.5.1",
+  "version": "1.0.1",
   "description": "Common helpers and extends for trackthis",
   "main": "index.js",
   "scripts": {
@@ -11,17 +11,21 @@
     "url": "https://github.com/trackthis/js-helpers"
   },
   "optionalDependencies": {
-    "extend": "^3.0.1"
+    "extend": "^3.0.2"
   },
   "author": "Robin Bron <robin@finwo.nl>",
   "license": "MIT",
   "devDependencies": {
     "co-mocha": "^1.2.2",
     "co-request": "^1.0.0",
-    "fs-extra": "^5.0.0",
+    "fs-extra": "^7.0.0",
     "jshint": "^2.9.5",
     "mocha": "^4.0.1",
     "nyc": "^11.5.0",
-    "serial-mocha": "0.0.4"
+    "serial-mocha": "0.0.4",
+    "bluebird": "^3.5.1"
+  },
+  "dependencies": {
+    "co": "^4.6.0"
   }
 }
