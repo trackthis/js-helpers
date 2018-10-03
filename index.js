@@ -1,13 +1,14 @@
-module.exports = function( { fs=false, hygienic=false, fix={} } = {} ) {
+module.exports = function( options ) {
+  options          = ( 'object' === typeof options ) ? ( options || {} ) : {};
+  options.hygienic = options.hygienic || false;
 
   if (!hygienic) {
     require('./lib/array-fill')
   }
 
-  // options = ( 'object' === typeof options ) ? ( options || {} ) : {};
   //
   // options.fs             = ('object'===typeof window) ? false : (options.fs || false);
-  // options.hygienic       = options.hygienic       || false;
+  //
   // options.fix            = options.fix            || {};
   // options.fix.browserify = options.fix.browserify || false;
   // options.fix.mocha      = options.fix.mocha      || false;
