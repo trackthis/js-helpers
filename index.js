@@ -1,18 +1,59 @@
-module.exports = function( options ) {
-  options          = ( 'object' === typeof options ) ? ( options || {} ) : {};
-  options.hygienic = options.hygienic || false;
+module.exports = function (options) {
+  options = ('object' === typeof options) ? (options || {}) : {};
+  options = Object.assign({}, {
+    hygienic  : false,
+    polyfill  : true,
+    extensions: false,
+  }, options);
 
-  if (!hygienic) {
-    require('./array.fill');
+  // Polyfill  : pull the engine into standardized future
+  // Extension : provide non-standard behavior
+
+  // Loader function
+  function load( available, toLoad ) {
+    let loadList = available;
+    if ('string' === typeof toLoad ) {
+      loadList = [toLoad];
+    }
+    if (Array.isArray(toLoad)) {
+      loadList = toLoad;
+    }
+    loadList.forEach(function( name ) {
+      if ( available.indexOf(name) < 0 ) {
+        return;
+      }
+      require('./'+name);
+    });
   }
 
-  //
-  // options.fs             = ('object'===typeof window) ? false : (options.fs || false);
-  //
-  // options.fix            = options.fix            || {};
-  // options.fix.browserify = options.fix.browserify || false;
-  // options.fix.mocha      = options.fix.mocha      || false;
-  //
+  // Define what we can load
+  let polyfills  = [
+        'array.fill',
+        'array.flat',
+        'array.includes',
+      ],
+      extensions = [
+        'array.unique'
+      ];
+
+  // These change stuff in the engine
+  // Allow the user to prevent that
+  if (!options.hygienic) {
+    if (options.polyfill) {
+      load(polyfills,options.polyfill);
+    }
+    if (options.extensions) {
+      load(extensions,options.extensions);
+    }
+  }
+
+  // Safe to export
+  return {
+    get: require('./get'),
+    set: require('./set'),
+  }
+
+
   // // String prototype extension
   // if(!options.hygienic) {
   //   require('./lib/string_format');

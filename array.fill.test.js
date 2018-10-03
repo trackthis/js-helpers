@@ -1,5 +1,6 @@
 import expect from 'expect';
 
+process.env.TEST = 'Array.prototype.fill';
 require('./array.fill');
 
 test('All elements in the array', () => {
