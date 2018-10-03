@@ -1,7 +1,7 @@
 .idea/
 .zedstate
-node_modules/
 coverage/
 .gtm/
 *-bak/
 *.bak
+jest.config.js
