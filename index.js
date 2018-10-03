@@ -3,7 +3,7 @@ module.exports = function( options ) {
   options.hygienic = options.hygienic || false;
 
   if (!hygienic) {
-    require('./lib/array-fill')
+    require('./array.fill');
   }
 
   //
