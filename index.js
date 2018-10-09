@@ -31,6 +31,7 @@ module.exports = function (options) {
         'array.fill',
         'array.flat',
         'array.includes',
+        'set-immediate',
       ],
       extensions = [
         'array.unique'
